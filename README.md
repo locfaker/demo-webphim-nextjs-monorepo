@@ -1,6 +1,10 @@
 # RoPhim - NextJS Monorepo Demo 🎬
 
-Dự án sử dụng kiến trúc **Monorepo** chuyên nghiệp, được tối ưu hóa cho hiệu suất và khả năng mở rộng.
+<p align="center">
+  <img src="demo.png" alt="RoPhim Demo" width="100%">
+</p>
+
+Dự án sử dụng kiến trúc **Monorepo**
 
 ## 📂 Cấu trúc thư mục (Folder Structure)
 
@@ -26,9 +30,4 @@ rophim-monorepo/
 
 ---
 
-## 📸 Demo Giao Diện
 
-![RoPhim Demo](demo.png)
-
----
-*Phát triển bởi **locfaker (@locv2659@gmail.com)**.*
