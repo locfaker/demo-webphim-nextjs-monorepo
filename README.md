@@ -1,7 +1,7 @@
 # RoPhim - NextJS Monorepo Demo 🎬
 
 <p align="center">
-  <img src="demo.png" alt="RoPhim Demo" width="100%">
+  <img src="hero.png" alt="RoPhim Demo" width="100%">
 </p>
 
 Dự án sử dụng kiến trúc **Monorepo**
