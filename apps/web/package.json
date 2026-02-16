@@ -1,0 +1,39 @@
+{
+  "name": "@rophim/web",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --port 3000",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint --max-warnings 0",
+    "check-types": "next typegen && tsc --noEmit"
+  },
+  "dependencies": {
+    "@repo/ui": "workspace:*",
+    "artplayer": "^5.3.0",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.34.0",
+    "hls.js": "^1.6.15",
+    "lucide-react": "^0.564.0",
+    "next": "16.1.5",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "swiper": "^11.2.10",
+    "tailwind-merge": "^3.4.0"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@tailwindcss/postcss": "^4.0.0",
+    "@types/node": "^22.15.3",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
+    "autoprefixer": "^10.4.24",
+    "eslint": "^9.39.1",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.15",
+    "typescript": "5.9.2"
+  }
+}
