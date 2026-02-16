@@ -1,0 +1,437 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: 'Be Vietnam Pro';
+  --background: #0b0d14;
+  --foreground: #ffffff;
+  --rophim-primary: #f0c24d;
+  /* Updated to match screenshot yellow */
+  --accent-pink: #d946ef;
+
+  /* Rophim Brand Colors */
+  --primary-color: #ffd875;
+  --primary-color-hover: #ffde8a;
+  --primary-text: #ffd875;
+  --primary-button-text: #191b24;
+  /* --accent-pink: #ff6eb4; */
+  /* This was moved/updated above */
+
+  /* Backgrounds */
+  --bg-color: #0F111A;
+  --bg-2: #191b24;
+  --bg-3: #202331;
+  --bg-4: #282b3a;
+  --bg-5: #2f3346;
+  --top-bg-default: #0f111a;
+  --footer-bg: #0b0d14;
+
+  /* Text & Borders */
+  --text-base: #aaa;
+  --category-name: #fff;
+  --border-color: #ffffff10;
+
+  /* Component Specific */
+  --h-shadow: 0 2px 3px rgba(0, 0, 0, 0.4);
+  --shadow-large: 0 0 20px 20px rgba(0, 0, 0, 0.1);
+  --rophim-glow: 0 0 15px 2px rgba(255, 216, 117, 0.3);
+}
+
+/* 100% Fidelity Hardening */
+/* 100% Fidelity Hardening - Cinematic Ranking Style */
+.ranking-number-hollow {
+  font-family: var(--font-oswald), sans-serif;
+  font-weight: 800;
+  font-style: italic;
+  font-size: 180px;
+  line-height: 0.7;
+  color: transparent;
+  -webkit-text-stroke: 2.2px rgba(255, 255, 255, 0.45);
+  text-shadow: 0 10px 40px rgba(0, 0, 0, 1);
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -24px;
+  /* Control positioning component-side via Tailwind */
+  transform: scaleX(0.78);
+  transform-origin: left bottom;
+  opacity: 1;
+  transition: all 0.4s ease;
+}
+
+.swiper-slide:hover .ranking-number-hollow {
+  -webkit-text-stroke: 2.2px rgba(255, 255, 255, 0.8);
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.2));
+}
+
+/* Aggressive Development Badge Removal */
+#nextjs-portal,
+#__next-build-watcher,
+.nextjs-static-indicator,
+[data-nextjs-toast],
+[data-nextjs-dialog],
+[class*="dev-tools"],
+[id*="nextjs"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.search-bar-glow:focus-within {
+  box-shadow: var(--rophim-glow);
+  border-color: #ffd875aa !important;
+}
+
+.gloss-effect::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.13) 50%, rgba(255, 255, 255, 0) 100%);
+  transform: skewX(-25deg);
+  transition: all 0.75s;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.group:hover .gloss-effect::after {
+  left: 125%;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.container {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  height: 90px;
+  padding: 0 11.2px;
+  font-size: 13px;
+  color: #fff;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  color: var(--primary-color);
+}
+
+#search {
+  position: relative;
+  margin-left: 24px;
+}
+
+.search-elements {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 6.4px;
+  height: 45px;
+  transition: background-color 0.2s;
+}
+
+.search-elements:focus-within {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.search-icon {
+  position: absolute;
+  left: 15px;
+  color: rgba(255, 255, 255, 0.6);
+  pointer-events: none;
+}
+
+.search-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  padding-left: 48px;
+  padding-right: 20px;
+  color: #fff;
+  font-size: 14px;
+  width: 368px;
+  /* Standardize width to 368px */
+}
+
+.button-login {
+  background-color: #fff;
+  color: #191b24;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.button-login:hover {
+  background-color: var(--primary-color);
+  transform: translateY(-1px);
+}
+
+/* Cleaned up unused hl-tag classes to prevent conflicts */
+
+/* Movie Card */
+.card-badge {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  z-index: 10;
+}
+
+.badge-item {
+  background-color: #5e6070;
+  color: #fff;
+  font-size: 11px;
+  height: 24px;
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+  border-radius: 2px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-primary {
+  background-color: #2ca35d;
+  color: #fff;
+}
+
+.card-title {
+  font-size: 14px;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: color 0.2s;
+  margin-top: 8px;
+}
+
+.group:hover .card-title {
+  color: var(--primary-color);
+}
+
+.card-subtitle {
+  font-size: 12.6px;
+  color: #aaa;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.category-name {
+  font-size: 25.2px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  letter-spacing: 1px;
+  position: relative;
+  padding-left: 15px;
+}
+
+.category-name::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 3px;
+  height: 24px;
+  background-color: var(--primary-color);
+  border-radius: 4px;
+}
+
+.category-name span {
+  color: var(--accent-pink);
+}
+
+.tag-topic {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.6);
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  transition: all 0.2s;
+}
+
+.tag-topic:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-3);
+  border-radius: 4px;
+}
+
+
+/* Hide Next.js / Turbopack dev badges */
+@keyframes slow-zoom {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+.animate-slow-zoom {
+  animation: slow-zoom 20s ease-in-out infinite alternate;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.thumbs-slider .swiper-slide-thumb-active {
+  border-color: #ffd875 !important;
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+.thumbs-slider .swiper-slide {
+  transition: all 0.3s ease;
+}
+
+/* Watch Page */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #ffd87533;
+  border-radius: 10px;
+}
+
+.artplayer-app {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.art-control-progress-inner {
+  background: #ffd875 !important;
+}
+
+#nextjs-portal,
+[data-nextjs-toast],
+[data-nextjs-dialog] {
+  display: none !important;
+}
+
+/* Movie Detail Page Premium Styles */
+.blue-neon-border {
+  position: relative;
+}
+
+.blue-neon-border::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(to bottom, #2b57ff, #1c3fff);
+  filter: blur(8px);
+  opacity: 0.15;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.blue-neon-glow {
+  box-shadow: 0 0 50px 10px rgba(43, 87, 255, 0.15);
+}
+
+.backdrop-gradient {
+  background: linear-gradient(to top, #191b24 0%, rgba(25, 27, 36, 0.4) 40%, rgba(25, 27, 36, 0) 100%);
+}
+
+.tag-badge {
+  @apply px-2 py-0.5 border border-white/20 rounded-md text-[10px] font-bold uppercase tracking-wider text-white/60 transition-colors hover:border-[#ffd875] hover:text-[#ffd875];
+}
+
+.tag-badge-yellow {
+  @apply px-2 py-0.5 border border-[#ffd875] rounded-md text-[10px] font-bold uppercase tracking-wider text-[#ffd875];
+}
+
+/* Custom Scrollbar for sidebars */
+.detail-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.detail-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.detail-scrollbar::-webkit-scrollbar-thumb {
+  background: #2b57ff44;
+  border-radius: 10px;
+}
+
+.detail-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #2b57ff66;
+}
+
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-card-fade {
+  animation: cardFadeIn 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+.__next-dev-tools-icon {
+  display: none !important;
+}
